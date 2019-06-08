@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #C90000;">
+        <a class="navbar-brand text-light" href="/">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link text-light" href="/bachelor">학사안내 </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="/recruit">모집안내</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="/notice">공지안내</a>
+            </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="/event">행사안내</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="/award">장학안내</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="/bid">입찰안내</a>
+            </li>
+          </ul>
+          <%if(sess.info){%>
+          <form class="form-inline my-2 my-lg-0" action="/insertKeyword" method="POST">
+            <select class="custom-select mr-sm-2" name="kindNum" id="inlineFormCustomSelect">
+                <option selected>선택</option>
+                <option value="1">학사</option>
+                <option value="2">모집</option>
+                <option value="3">공지</option>
+                <option value="4">행사</option>
+                <option value="5">장학</option>
+                <option value="6">입찰</option>
+              </select>
+            <!-- <select name="kindNum" size="1" style="width: 150px; height: 34px;">
+                <option selected>선택</option>
+                <option value="1">학사</option>
+                <option value="2">모집</option>
+                <option value="3">공지</option>
+                <option value="4">행사</option>
+                <option value="5">장학</option>
+                <option value="6">입찰</option>
+              </select> -->
+            <input class="form-control mr-sm-2" type="search" name="keywordName" placeholder="keyword">
+            <input type="submit" class="btn btn-outline-danger text-light" value="등록">
+          </form>
+          <%}%>
+        </div>
+      </nav>
+</body>
+</html>

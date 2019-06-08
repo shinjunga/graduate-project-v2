@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        table tr th, td {text-align:center; text-decoration: none;};
+    </style>
+</head>
+<body>
+        <h1 class="text-left">마이페이지</h1>
+        <hr style="border: 2px solid #FF3636; width:240px; float:left;">
+        <table class="table table-hover">
+                <thead>
+                  <tr>
+                  <th style="width:100px;" scope="col">번호</th>
+                  <th style="width:500px;" scope="col">키워드</th>
+                  <th style="width:100px;" scope="col">분야</th>
+                  <th style="width:150px;"scope="col">등록일</th>
+                  <th style="width:150px;"scope="col">비고</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <%for(var i=0;i<data.length; i++) { %>
+                        <%if(sess.info.userId == data[i].userId) {%>
+                <tr>
+                  <th scope="row"><%=data[i].keywordNum%></th>
+                  <td><%=data[i].keywordName%></td>
+                  <td><%=data[i].kindName%></td>
+                  <td><%=data[i].CDATE%></td>
+                  <td><a style=" font-size: 15pt; padding:10px; border:none; background-color:#FF6C6C; color:white;float: right; background-color:#DB0000; border-radius: 10px; margin-right:67px;" href="/deleteKeyword/<%=data[i].keywordNum%>">삭제</a></td>
+                </tr>
+                <% }} %>
+                </tbody>
+              </table>
+</body>
+</html>

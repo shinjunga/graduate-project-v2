@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='stylesheet' href='/stylesheets/header.css' />
+    <meta charset="UTF-8">
+    <style>
+     a:link { color: white; text-decoration: none;}
+     a:visited { color: white; text-decoration: none;}
+     a:hover { color: white; text-decoration: none; font-weight: 2px;}
+    </style>
+</head>
+<body>
+    <div class="h01"><a href="/"><img src="../img/logo.png"></a></div>
+    <div class="h02"></div>
+    <div class="h03">
+        <p class="a1">
+                <%if(sess.info) {%>
+                    <a class="a1" href="#"><%=sess.info.userName%>님</a>
+                    &nbsp;|&nbsp;
+                    <a class="a1" href="/Mypage/<%=sess.info.userId%>">마이페이지</a>
+                     &nbsp;|&nbsp;
+                    <a class="a1" href="/logout">로그아웃</a>
+                    <% } else { %>
+                    <a class="a1" href="/login">로그인</a>
+                    &nbsp;|&nbsp;
+                    <a class="a1" href="/join">회원가입</a>
+                 <% } %>
+        </p>
+    </div>
+</body>
+</html>

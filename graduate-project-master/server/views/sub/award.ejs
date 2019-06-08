@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        table tr th, td {text-align:center;};
+    </style>
+</head>
+<body>
+        <h1 class="text-left">장학안내</h1>
+        <hr style="border: 2px solid #FF3636; width:240px; float:left;">
+        <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th style="width:100px;" scope="col">번호</th>
+                    <th style="width:500px;" scope="col">제목</th>
+                    <th style="width:100px" scope="col">작성자</th>
+                    <th style="width:100px" scope="col">분야</th>
+                    <th style="width:150px"scope="col">등록일</th>
+                    <th style="width:50px;"scope="col">조회</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <%for(var i=0;i<data.length; i++) { %>
+                  <tr>
+                    <th scope="row"><%=data[i].noticeNum%></th>
+                    <td class="text-left"><a style="color: gray;" href="/Detail/<%=data[i].noticeNum%>"><%=data[i].noticeTitle%></a></td>
+                    <td><%=data[i].noticeAthor%></td>
+                    <td><%=data[i].kindName%></td>
+                    <td><%=data[i].CDATE%></td>
+                    <td><%=data[i].noticeSee%></td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
+              <%if(sess.info){if(sess.info.userCheck == 1) {%>
+                <a style="font-size: 15pt; padding:10px; border:none; background-color:#FF6C6C; color:white;float: right; background-color:#DB0000; border-radius: 10px; margin-right:10px;" href="/Insert">등록</a>
+  
+                <%}}%>
+</body>
+</html>

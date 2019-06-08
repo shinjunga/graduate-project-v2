@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>회원가입</title>
+	<link rel="stylesheet" href="/stylesheets/signup.css">
+</head>
+<body>
+	<header>
+        <form action="http://localhost:3000/join" method="POST">
+		<div class="wrap">
+		<div class="left">
+		<p>Home > 회원가입</p>
+		<h1>회원가입</h1>
+		<hr/>
+        <br>
+		<fieldset>
+		<legend style="font-size: 20px;">정보입력</legend>
+		<br>
+		<label>이름</label>
+		<input type="text" id="name" name="userName" style="margin-left: 48px;">
+		<br>
+		<label>아이디</label>	
+		<input type="text" id="username2" name="userId" style="margin: 34px;">
+		
+		<br>
+		<label>비밀번호</label>
+		<input type="password" id="pass1" name="userPass" style="margin-left: 20px;">
+		<br>
+
+		<label>*확인</label>
+		<input type="password" id="password" name="userPassgg" style="margin-left: 40px; margin-top: 30px; margin-bottom: 30px">
+		<br>
+		<label>분류</label>
+		<select name="userCheck" size="1" style="width: 150px; height: 34px; margin-left: 47px;">
+			<option>선택</option>
+			<option value="1">관리자</option>
+			<option value="0">학생</option>
+		</select>
+        <br>
+		
+		</fieldset>
+		<br>
+		<input id="signup_button" style="font-size: 12pt;margin-left:40%; margin-top: 10px; padding:5px; border:none; background-color:#FF6C6C; color:white;" type="submit" value="회원가입">
+		<input id="reset2" style="font-size: 12pt;padding:5px;border:none; background-color:#FF6C6C; color:white;" type="reset" value="취소">
+        </div>
+    </form>
+	</header>
+</body>
+</html>

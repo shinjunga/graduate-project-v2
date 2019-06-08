@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>게시물 등록</title>
+</head>
+<body>
+  <center>
+    
+    <table>
+        <tr>
+          <%for(var i=0;i<data.length; i++) {%>
+        <form action="/Modify/<%=data[i].noticeNum%>" method="POST">
+          <td width=200 align=center >제 목</td>
+          <td align=left >
+            <input style="height: 25px;" type=text name=noticeTitle size=30 maxlength=35 value="<%=data[i].noticeTitle%>">
+          </td>
+        </tr>
+        <tr>
+            <td width=200 align=center >작성자</td>
+            <td align=left >
+              <input style="height: 25px; border: none;" type="text" name="noticeAthor" size="30" maxlength="35" value="<%=sess.info.userName%>">
+            </td>
+          </tr>
+        <tr>
+            <td width=200 align=center >분 야</td>
+            <td align=left >
+        <select name="kindNum" size="1" style="width: 150px; height: 34px;" >
+            <option value="<%=data[i].kindNum%>"><%=data[i].kindNum%></option>
+            <option value="1">학사</option>
+            <option value="2">모집</option>
+            <option value="3">공지</option>
+            <option value="4">행사</option>
+            <option value="5">장학</option>
+            <option value="6">입찰</option>
+          </select>
+        </td>
+        </tr>
+        <tr>
+          <td width=200 align=center >내 용</td>
+          <td align=left >
+            <textarea name=noticeContent cols=65 rows=15><%=data[i].noticeContent%></TEXTAREA>
+          </td>
+        </tr>
+        <tr>
+            <td width=200 align=center >조회 수</td>
+            <td align=left >
+              <input style="height: 25px; border: none;" type="text" name="noticeSee" size="30" maxlength="35" value="<%=data[i].noticeSee%>">
+            </td>
+          </tr>
+        <tr>
+          <tr>
+            <td colspan="2"><input style="font-size: 15pt; padding:10px; border:none; background-color:#FF6C6C; color:white;float: right; background-color:#DB0000; border-radius: 10px; margin-right:10px;" type="submit" value="등록">
+            </td>
+          </tr>
+        </form>
+        <%}%>
+  </table>
+
+</center>
+        <!-- <table class="table table-bordered">
+          <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">#</th>
+                    <th scope="col"> <div class="form-group">
+                      <label for="noticeTitle">제목</label>
+                      <input type="text" class="form-control" id="noticeTitle" name="noticeTitle" placeholder="제목">
+                  </div></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td scope="col"> <div class="form-group">
+                        <label for="noticeTitle">제목</label>
+                        <input type="text" class="form-control" id="noticeTitle" name="noticeTitle" placeholder="제목">
+                    </div></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                  
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry the Bird</td>
+                   
+                  </tr>
+                </tbody>
+              </table> -->
+</body>
+</html>

@@ -1,0 +1,21 @@
+ .wrap {width: 700px; min-height: 600px; }
+ .wrap {text-align:left; text-decoration: none; background-color: white;}
+ .wrap {margin: 20px; margin-right: auto; margin-left: auto;}
+
+header {height: 80px; }
+article{width: 560px; }
+
+footer {height: 70px; }
+.left {float: left;}
+#username{width: 200px; height: 30px;}
+#password{width: 200px; height: 30px;}
+label{font-size: 15px}
+
+ body {list-style: none;}
+ header {vertical-align: middle; }
+
+ a { text-decoration: none; }
+
+#font{font-size: 12px; text-decoration: none;}
+ #Logo{color: #FF0000;font-size: 48px;}  
+
